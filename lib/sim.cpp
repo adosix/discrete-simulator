@@ -19,7 +19,7 @@ namespace sim {
         std::mt19937 gen(rd());
         //parameter is lambda
         std::exponential_distribution<> d(m);
-        
+
         return d(gen);
     }
 
@@ -55,7 +55,7 @@ namespace sim {
         std::map<int, int> result_set;
         
         for (int i =0; i < 100000; ++i)
-            ++result_set[exp(1)]; 
+            ++result_set[exp(8)];
 
         for (auto& v : result_set) {
             std::cout << std::setprecision (1) << std::fixed;
@@ -105,6 +105,9 @@ namespace sim {
     void Simulator::doAllEvents() {
         while (events.elements.size() > 0) {
             time = events.elements.front()->time;
+            if(end_time <= time){
+                exit(0);
+            }
             Event *tmp = events.elements.front();
             events.elements.erase(events.elements.begin());
             tmp->execute(this);

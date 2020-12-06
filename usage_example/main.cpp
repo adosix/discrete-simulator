@@ -1,9 +1,10 @@
-
+#include <getopt.h>
 #include "disease.cpp"
 #include "death_events.cpp"
 #include "bank.cpp"
+#include "demo_spalovna.cpp"
 #include "../lib/sim.h"
-#include <getopt.h>
+
 
 
 #define REQUIRED_ARGUMENT 1
@@ -93,12 +94,16 @@ int main(int argc, char *argv[]){
         DeathSimulator sim;
         sim.start();
     }
-    if((arguments->example).compare("disease")==0){
+    else if((arguments->example).compare("disease")==0){
         DiseaseSimulator sim;
         sim.start();
     }
-    else{
+    else if ((arguments->example).compare("bank")==0){
         BankSimulator_v sim;
+        sim.start();
+    }
+    else{
+       Spalovna sim;
         sim.start();
     }
     return 0;
