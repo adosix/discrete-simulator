@@ -1,0 +1,137 @@
+\doxysection{sim\+::Event Class Reference}
+\label{classsim_1_1_event}\index{sim::Event@{sim::Event}}
+
+
+Class \doxyref{Event}{p.}{classsim_1_1_event} describes an event in module.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ less\+Than} (double y)
+\begin{DoxyCompactList}\small\item\em Compares time with double y. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by time. \end{DoxyCompactList}\item 
+bool \textbf{ greater\+Than} (int x)
+\begin{DoxyCompactList}\small\item\em Compares priority with in x. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by priority when time is the same. \end{DoxyCompactList}\item 
+bool \textbf{ equal} (double y)
+\begin{DoxyCompactList}\small\item\em Compares time with double y. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by time. \end{DoxyCompactList}\item 
+virtual void \textbf{ execute} (\textbf{ Simulator} $\ast$simulate)
+\begin{DoxyCompactList}\small\item\em Behaviour of the event. Every child class of the class \doxyref{Event}{p.}{classsim_1_1_event} has to implement its own execute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \textbf{ time} = 0.\+0
+\item 
+\mbox{\label{classsim_1_1_event_a2eeed172f2f8ef76b92c4e8716d214b0}} 
+int {\bfseries priority} = 0
+\item 
+\mbox{\label{classsim_1_1_event_a5b271bfda608fe8a8b97033e696bbffd}} 
+double {\bfseries length} = 0
+\item 
+\mbox{\label{classsim_1_1_event_a515265c444a1327bd3bc083d6fe52b00}} 
+int {\bfseries value} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxyref{Event}{p.}{classsim_1_1_event} describes an event in module. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classsim_1_1_event_a55a38c4ed026fe4a5db07a3ef39a9bf5}} 
+\index{sim::Event@{sim::Event}!equal@{equal}}
+\index{equal@{equal}!sim::Event@{sim::Event}}
+\doxysubsubsection{equal()}
+{\footnotesize\ttfamily bool sim\+::\+Event\+::equal (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Compares time with double y. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & double time to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if time is equal to y 
+\end{DoxyReturn}
+\mbox{\label{classsim_1_1_event_a94b60d4c2777856bded957f8a86b4b80}} 
+\index{sim::Event@{sim::Event}!execute@{execute}}
+\index{execute@{execute}!sim::Event@{sim::Event}}
+\doxysubsubsection{execute()}
+{\footnotesize\ttfamily virtual void sim\+::\+Event\+::execute (\begin{DoxyParamCaption}\item[{\textbf{ Simulator} $\ast$}]{simulate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Behaviour of the event. Every child class of the class \doxyref{Event}{p.}{classsim_1_1_event} has to implement its own execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$simulate} & \doxyref{Simulator}{p.}{classsim_1_1_simulator} simulator that simulates an example \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classsim_1_1_event_afa08c361ddcd30bdd39e1c35b3acaf5d}} 
+\index{sim::Event@{sim::Event}!greaterThan@{greaterThan}}
+\index{greaterThan@{greaterThan}!sim::Event@{sim::Event}}
+\doxysubsubsection{greaterThan()}
+{\footnotesize\ttfamily bool sim\+::\+Event\+::greater\+Than (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Compares priority with in x. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by priority when time is the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & int priority to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if priority is greater than x 
+\end{DoxyReturn}
+\mbox{\label{classsim_1_1_event_a639290a59f0edfd4ecc3127018e2ff29}} 
+\index{sim::Event@{sim::Event}!lessThan@{lessThan}}
+\index{lessThan@{lessThan}!sim::Event@{sim::Event}}
+\doxysubsubsection{lessThan()}
+{\footnotesize\ttfamily bool sim\+::\+Event\+::less\+Than (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Compares time with double y. Used in \doxyref{Simulator}{p.}{classsim_1_1_simulator} to sort events by time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & double time to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if time is less than y 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classsim_1_1_event_a5cd265cb47d648653be4ce7151760141}} 
+\index{sim::Event@{sim::Event}!time@{time}}
+\index{time@{time}!sim::Event@{sim::Event}}
+\doxysubsubsection{time}
+{\footnotesize\ttfamily double sim\+::\+Event\+::time = 0.\+0}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & double setting when is the event finished \\
+\hline
+{\em priority} & int setting the priority of the event \\
+\hline
+{\em length} & double setting the length of the event; needed to initialize when the event goes to facility or storage \\
+\hline
+{\em value} & int how much capacity in store does event take \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sim.\+h\item 
+sim.\+cpp\end{DoxyCompactItemize}

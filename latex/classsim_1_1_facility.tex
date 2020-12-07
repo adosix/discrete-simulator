@@ -1,0 +1,93 @@
+\doxysection{sim\+::Facility$<$ T $>$ Class Template Reference}
+\label{classsim_1_1_facility}\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+
+
+Class \doxyref{Facility}{p.}{classsim_1_1_facility} that represents device in a simulation that its capacity is one event.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Seize} (\textbf{ sim\+::\+Simulator} $\ast$simulate, T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em $\ast$obj T occupy \doxyref{Facility}{p.}{classsim_1_1_facility} \end{DoxyCompactList}\item 
+void \textbf{ Release} (\textbf{ sim\+::\+Simulator} $\ast$simulate)
+\begin{DoxyCompactList}\small\item\em release the \doxyref{Facility}{p.}{classsim_1_1_facility} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ busy\+\_\+flag} = false
+\item 
+\mbox{\label{classsim_1_1_facility_a1cbb09ff776935dac14c18012a71d127}} 
+std\+::queue$<$ T $\ast$ $>$ {\bfseries queue\+\_\+f}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class sim\+::\+Facility$<$ T $>$}
+
+Class \doxyref{Facility}{p.}{classsim_1_1_facility} that represents device in a simulation that its capacity is one event. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classsim_1_1_facility_a380b4d995c3928fb8e9a73700d89f0f0}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!Release@{Release}}
+\index{Release@{Release}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{Release()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \textbf{ sim\+::\+Facility}$<$ T $>$\+::Release (\begin{DoxyParamCaption}\item[{\textbf{ sim\+::\+Simulator} $\ast$}]{simulate }\end{DoxyParamCaption})}
+
+
+
+release the \doxyref{Facility}{p.}{classsim_1_1_facility} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$simulate} & \doxyref{Simulator}{p.}{classsim_1_1_simulator} simulator that simulates an example bus\+\_\+flag is set to false if queue\+\_\+f has size()$>$0 , get first element as T $\ast$obj, erase this element from queue\+\_\+f and the function \doxyref{Seize(sim\+::\+Simulator $\ast$simulate, T $\ast$obj)}{p.}{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c} is called \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!Seize@{Seize}}
+\index{Seize@{Seize}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{Seize()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \textbf{ sim\+::\+Facility}$<$ T $>$\+::Seize (\begin{DoxyParamCaption}\item[{\textbf{ sim\+::\+Simulator} $\ast$}]{simulate,  }\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+$\ast$obj T occupy \doxyref{Facility}{p.}{classsim_1_1_facility} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$obj} & T that will occupy \doxyref{Facility}{p.}{classsim_1_1_facility} \\
+\hline
+{\em $\ast$simulate} & \doxyref{Simulator}{p.}{classsim_1_1_simulator} simulator that simulates an example\\
+\hline
+\end{DoxyParams}
+if the busy flag is false, then $\ast$obj will occupy \doxyref{Facility}{p.}{classsim_1_1_facility} and the busy\+\_\+flag is set to true and the time of obj is set to simulate\+::time + obj\+::length otherwise push $\ast$obj to queue\+\_\+f 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classsim_1_1_facility_ad5361b0eafec7d58bc866f48b802d0b8}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!busy\_flag@{busy\_flag}}
+\index{busy\_flag@{busy\_flag}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{busy\_flag}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \textbf{ sim\+::\+Facility}$<$ T $>$\+::busy\+\_\+flag = false}
+
+
+\begin{DoxyParams}{Parameters}
+{\em bool} & busy\+\_\+flag it is set to True when the device is taken \\
+\hline
+{\em queue\+\_\+f} & std\+::queue$<$\+T $\ast$$>$ represents queue in front of device \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sim.\+h\end{DoxyCompactItemize}

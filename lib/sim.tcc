@@ -6,33 +6,14 @@
 #endif
 namespace sim {
 
-    template <class T>
-    int Queue_t<T>::size(){
-
-        return objects.size();
-
-    };
-    template <class T>
-    T* sim::Queue_t<T>::remove(){
-
-        T *obj = objects.front();
-        objects.erase(objects.begin());
-        return obj;
-
-    };
-    template <class T>
-    void sim::Queue_t<T>::insert(T *obj){
-
-        objects.push_back(obj);
-
-    };
 
     template <class T>
     void sim::Facility<T>::Release(sim::Simulator *simulate) {
 
         busy_flag=false;
-        if (queue.size()>0) {
-            T *obj= queue.remove();
+        if (queue_f.size()>0) {
+            T *obj= queue_f.front();
+            queue_f.pop();
             this->Seize(simulate, obj);
         }
     };
@@ -41,7 +22,7 @@ namespace sim {
     template <class T>
     void sim::Facility<T>::Seize(sim::Simulator *simulate, T *obj) {
         if(busy_flag){
-            queue.insert(obj);
+            queue_f.push(obj);
         }
         else{
             busy_flag=true;
@@ -53,7 +34,7 @@ namespace sim {
     template <class T>
     bool sim::Storage<T>::Full(T *obj){
 
-        if (capacity < (current_capacity+obj->value)){
+        if (capacity < (current_capacity+obj->value) || queue.size()>0){
             return true;
         }
         else{
