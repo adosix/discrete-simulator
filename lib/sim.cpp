@@ -19,7 +19,7 @@ namespace sim {
         std::mt19937 gen(rd());
         //parameter is lambda
         std::exponential_distribution<> d(m);
-        
+
         return d(gen);
     }
 
@@ -157,6 +157,9 @@ namespace sim {
     void Simulator::doAllEvents() {
         while (events.elements.size() > 0) {
             time = events.elements.front()->time;
+            if(end_time <= time){
+                exit(0);
+            }
             Event *tmp = events.elements.front();
             events.elements.erase(events.elements.begin());
             tmp->execute(this);
