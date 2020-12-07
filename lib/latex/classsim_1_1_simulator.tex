@@ -1,0 +1,78 @@
+\hypertarget{classsim_1_1_simulator}{}\doxysection{sim\+::Simulator Class Reference}
+\label{classsim_1_1_simulator}\index{sim::Simulator@{sim::Simulator}}
+
+
+Class \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} that is used to simulate whole experiment.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classsim_1_1_simulator_a1f073f24299b477df15ab9b29644d82e}{now}} ()
+\begin{DoxyCompactList}\small\item\em returns time of the \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664}\label{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664}} 
+void \mbox{\hyperlink{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664}{do\+All\+Events}} ()
+\begin{DoxyCompactList}\small\item\em execute all the events in \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} Sets time of \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} to the time of he last executed event. Program ends when the time is greater or equal to the end\+\_\+time. Executes event at the front of \mbox{\hyperlink{classsim_1_1_list_queue_a162ffe38bcb636f74992f99727ad59f2}{List\+Queue\+::elements}} and erase this event from \mbox{\hyperlink{classsim_1_1_list_queue_a162ffe38bcb636f74992f99727ad59f2}{List\+Queue\+::elements}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsim_1_1_simulator_aad1c1433355dfd7a8766c8a24104a17b}\label{classsim_1_1_simulator_aad1c1433355dfd7a8766c8a24104a17b}} 
+virtual void \mbox{\hyperlink{classsim_1_1_simulator_aad1c1433355dfd7a8766c8a24104a17b}{start}} ()
+\begin{DoxyCompactList}\small\item\em start of the Simulation Initialize \mbox{\hyperlink{classsim_1_1_list_queue}{sim\+::\+List\+Queue}} events; sets end\+\_\+time(M\+AX=double\+\_\+max) Insert into events at least one \mbox{\hyperlink{classsim_1_1_event}{Event}} Call \mbox{\hyperlink{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664}{do\+All\+Events()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsim_1_1_list_queue}{List\+Queue}} \mbox{\hyperlink{classsim_1_1_simulator_a6d33d0e41c4589f22f5735bdfc2b2119}{events}}
+\item 
+\mbox{\Hypertarget{classsim_1_1_simulator_a802d2e3819245a3b3a77b4680fca52d4}\label{classsim_1_1_simulator_a802d2e3819245a3b3a77b4680fca52d4}} 
+double {\bfseries time} = 0.\+0
+\item 
+\mbox{\Hypertarget{classsim_1_1_simulator_aeb5b50f438f799e403508a1b91a01af7}\label{classsim_1_1_simulator_aeb5b50f438f799e403508a1b91a01af7}} 
+double {\bfseries end\+\_\+time} =0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} that is used to simulate whole experiment. 
+
+Simulation ends when its time reaches end\+\_\+time or when all the events are finished. Simulation time is time of the last executed event 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsim_1_1_simulator_a1f073f24299b477df15ab9b29644d82e}\label{classsim_1_1_simulator_a1f073f24299b477df15ab9b29644d82e}} 
+\index{sim::Simulator@{sim::Simulator}!now@{now}}
+\index{now@{now}!sim::Simulator@{sim::Simulator}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}}
+{\footnotesize\ttfamily double sim\+::\+Simulator\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns time of the \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} 
+
+\begin{DoxyReturn}{Returns}
+time of the \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsim_1_1_simulator_a6d33d0e41c4589f22f5735bdfc2b2119}\label{classsim_1_1_simulator_a6d33d0e41c4589f22f5735bdfc2b2119}} 
+\index{sim::Simulator@{sim::Simulator}!events@{events}}
+\index{events@{events}!sim::Simulator@{sim::Simulator}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsim_1_1_list_queue}{List\+Queue}} sim\+::\+Simulator\+::events}
+
+
+\begin{DoxyParams}{Parameters}
+{\em events} & \mbox{\hyperlink{classsim_1_1_list_queue}{List\+Queue}} to store events of simulator. \\
+\hline
+{\em time} & double time of the simulation. \\
+\hline
+{\em end\+\_\+time} & double is final time of the simulation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sim_8h}{sim.\+h}}\item 
+\mbox{\hyperlink{sim_8cpp}{sim.\+cpp}}\end{DoxyCompactItemize}

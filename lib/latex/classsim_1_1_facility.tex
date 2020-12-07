@@ -1,0 +1,93 @@
+\hypertarget{classsim_1_1_facility}{}\doxysection{sim\+::Facility$<$ T $>$ Class Template Reference}
+\label{classsim_1_1_facility}\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+
+
+Class \mbox{\hyperlink{classsim_1_1_facility}{Facility}} that represents device in a simulation that its capacity is one event.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c}{Seize}} (\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$simulate, T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em $\ast$obj T occupy \mbox{\hyperlink{classsim_1_1_facility}{Facility}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsim_1_1_facility_a380b4d995c3928fb8e9a73700d89f0f0}{Release}} (\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$simulate)
+\begin{DoxyCompactList}\small\item\em release the \mbox{\hyperlink{classsim_1_1_facility}{Facility}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsim_1_1_facility_ad5361b0eafec7d58bc866f48b802d0b8}{busy\+\_\+flag}} = false
+\item 
+\mbox{\Hypertarget{classsim_1_1_facility_a1cbb09ff776935dac14c18012a71d127}\label{classsim_1_1_facility_a1cbb09ff776935dac14c18012a71d127}} 
+std\+::queue$<$ T $\ast$ $>$ {\bfseries queue\+\_\+f}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class sim\+::\+Facility$<$ T $>$}
+
+Class \mbox{\hyperlink{classsim_1_1_facility}{Facility}} that represents device in a simulation that its capacity is one event. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsim_1_1_facility_a380b4d995c3928fb8e9a73700d89f0f0}\label{classsim_1_1_facility_a380b4d995c3928fb8e9a73700d89f0f0}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!Release@{Release}}
+\index{Release@{Release}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classsim_1_1_facility}{sim\+::\+Facility}}$<$ T $>$\+::Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$}]{simulate }\end{DoxyParamCaption})}
+
+
+
+release the \mbox{\hyperlink{classsim_1_1_facility}{Facility}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$simulate} & \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} simulator that simulates an example bus\+\_\+flag is set to false if queue\+\_\+f has size()$>$0 , get first element as T $\ast$obj, erase this element from queue\+\_\+f and the function \mbox{\hyperlink{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c}{Seize(sim\+::\+Simulator $\ast$simulate, T $\ast$obj)}} is called \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c}\label{classsim_1_1_facility_a6830b9b68db9679ec9713f2125b1b82c}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!Seize@{Seize}}
+\index{Seize@{Seize}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Seize()}{Seize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classsim_1_1_facility}{sim\+::\+Facility}}$<$ T $>$\+::Seize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$}]{simulate,  }\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+$\ast$obj T occupy \mbox{\hyperlink{classsim_1_1_facility}{Facility}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$obj} & T that will occupy \mbox{\hyperlink{classsim_1_1_facility}{Facility}} \\
+\hline
+{\em $\ast$simulate} & \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} simulator that simulates an example\\
+\hline
+\end{DoxyParams}
+if the busy flag is false, then $\ast$obj will occupy \mbox{\hyperlink{classsim_1_1_facility}{Facility}} and the busy\+\_\+flag is set to true and the time of obj is set to simulate\+::time + obj\+::length otherwise push $\ast$obj to queue\+\_\+f 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsim_1_1_facility_ad5361b0eafec7d58bc866f48b802d0b8}\label{classsim_1_1_facility_ad5361b0eafec7d58bc866f48b802d0b8}} 
+\index{sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}!busy\_flag@{busy\_flag}}
+\index{busy\_flag@{busy\_flag}!sim::Facility$<$ T $>$@{sim::Facility$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{busy\_flag}{busy\_flag}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classsim_1_1_facility}{sim\+::\+Facility}}$<$ T $>$\+::busy\+\_\+flag = false}
+
+
+\begin{DoxyParams}{Parameters}
+{\em bool} & busy\+\_\+flag it is set to True when the device is taken \\
+\hline
+{\em queue\+\_\+f} & std\+::queue$<$\+T $\ast$$>$ represents queue in front of device \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sim_8h}{sim.\+h}}\end{DoxyCompactItemize}

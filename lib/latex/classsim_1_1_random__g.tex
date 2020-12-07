@@ -1,0 +1,120 @@
+\hypertarget{classsim_1_1_random__g}{}\doxysection{sim\+::Random\+\_\+g Class Reference}
+\label{classsim_1_1_random__g}\index{sim::Random\_g@{sim::Random\_g}}
+
+
+Class \mbox{\hyperlink{classsim_1_1_random__g}{Random\+\_\+g}} generates random values Can generate exponential, normal, uniform distribution and uniform distribution in rage \mbox{[}0,1\mbox{]}.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsim_1_1_random__g_a9718809a38684150fdb29047929f3a52}{distributions}} (int type)
+\begin{DoxyCompactList}\small\item\em demonstration of generators \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsim_1_1_random__g_a90c17fe05f7380f365362a61dfda3ee7}{exp\+\_\+m}} (double mean)
+\begin{DoxyCompactList}\small\item\em generates number which is described by exponential distribution \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsim_1_1_random__g_a03c9f4c796422d7736544e650c25407c}{exp}} (double lambda)
+\begin{DoxyCompactList}\small\item\em generates number which is described by exponential distribution \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsim_1_1_random__g_a0d84dc33b6e68203cb97e52033a35e2b}{normal}} (double m, double q)
+\begin{DoxyCompactList}\small\item\em generates number which is described by normal/\+Gaussian distribution \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsim_1_1_random__g_a10338222693e6dd8e4f6fb8e4e0cf0a5}{uniform}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em generates number which is described by uniform distribution on interval (a,b) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsim_1_1_random__g_a2c1c00390aa5276805c5af6a0df7e81e}\label{classsim_1_1_random__g_a2c1c00390aa5276805c5af6a0df7e81e}} 
+double \mbox{\hyperlink{classsim_1_1_random__g_a2c1c00390aa5276805c5af6a0df7e81e}{rand}} ()
+\begin{DoxyCompactList}\small\item\em generates number which is described by uniform distribution on interval (0,1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classsim_1_1_random__g}{Random\+\_\+g}} generates random values Can generate exponential, normal, uniform distribution and uniform distribution in rage \mbox{[}0,1\mbox{]}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsim_1_1_random__g_a9718809a38684150fdb29047929f3a52}\label{classsim_1_1_random__g_a9718809a38684150fdb29047929f3a52}} 
+\index{sim::Random\_g@{sim::Random\_g}!distributions@{distributions}}
+\index{distributions@{distributions}!sim::Random\_g@{sim::Random\_g}}
+\doxysubsubsection{\texorpdfstring{distributions()}{distributions()}}
+{\footnotesize\ttfamily void sim\+::\+Random\+\_\+g\+::distributions (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+demonstration of generators 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$type} & int defines which distripution is going to be executed 1 -\/ exponential 2 -\/ normal 3 -\/ uniform 4 -\/ random (uniform in range (0,1)) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsim_1_1_random__g_a03c9f4c796422d7736544e650c25407c}\label{classsim_1_1_random__g_a03c9f4c796422d7736544e650c25407c}} 
+\index{sim::Random\_g@{sim::Random\_g}!exp@{exp}}
+\index{exp@{exp}!sim::Random\_g@{sim::Random\_g}}
+\doxysubsubsection{\texorpdfstring{exp()}{exp()}}
+{\footnotesize\ttfamily double sim\+::\+Random\+\_\+g\+::exp (\begin{DoxyParamCaption}\item[{double}]{lambda }\end{DoxyParamCaption})}
+
+
+
+generates number which is described by exponential distribution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$lambda} & double of exponential distribution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsim_1_1_random__g_a90c17fe05f7380f365362a61dfda3ee7}\label{classsim_1_1_random__g_a90c17fe05f7380f365362a61dfda3ee7}} 
+\index{sim::Random\_g@{sim::Random\_g}!exp\_m@{exp\_m}}
+\index{exp\_m@{exp\_m}!sim::Random\_g@{sim::Random\_g}}
+\doxysubsubsection{\texorpdfstring{exp\_m()}{exp\_m()}}
+{\footnotesize\ttfamily double sim\+::\+Random\+\_\+g\+::exp\+\_\+m (\begin{DoxyParamCaption}\item[{double}]{mean }\end{DoxyParamCaption})}
+
+
+
+generates number which is described by exponential distribution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$mean} & double mean of exponential distribution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsim_1_1_random__g_a0d84dc33b6e68203cb97e52033a35e2b}\label{classsim_1_1_random__g_a0d84dc33b6e68203cb97e52033a35e2b}} 
+\index{sim::Random\_g@{sim::Random\_g}!normal@{normal}}
+\index{normal@{normal}!sim::Random\_g@{sim::Random\_g}}
+\doxysubsubsection{\texorpdfstring{normal()}{normal()}}
+{\footnotesize\ttfamily double sim\+::\+Random\+\_\+g\+::normal (\begin{DoxyParamCaption}\item[{double}]{m,  }\item[{double}]{q }\end{DoxyParamCaption})}
+
+
+
+generates number which is described by normal/\+Gaussian distribution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$m} & double mean of normal distribution \\
+\hline
+{\em $\ast$q} & double standard deviation of normal distribution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsim_1_1_random__g_a10338222693e6dd8e4f6fb8e4e0cf0a5}\label{classsim_1_1_random__g_a10338222693e6dd8e4f6fb8e4e0cf0a5}} 
+\index{sim::Random\_g@{sim::Random\_g}!uniform@{uniform}}
+\index{uniform@{uniform}!sim::Random\_g@{sim::Random\_g}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}}
+{\footnotesize\ttfamily double sim\+::\+Random\+\_\+g\+::uniform (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+
+
+generates number which is described by uniform distribution on interval (a,b) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$a} & double start of interval \\
+\hline
+{\em $\ast$b} & double end of interval \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sim_8h}{sim.\+h}}\item 
+\mbox{\hyperlink{sim_8cpp}{sim.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\hypertarget{classsim_1_1_storage}{}\doxysection{sim\+::Storage$<$ T $>$ Class Template Reference}
+\label{classsim_1_1_storage}\index{sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsim_1_1_storage_a9d5c1d3088875c5bdc1bd6303f7116a5}{Full}} (T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Checks if $\ast$obj can fit in storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsim_1_1_storage_ae8cc15470762c10194e27ddfdcb609ee}{Enter}} (\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$simulate, T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em $\ast$obj T enters \mbox{\hyperlink{classsim_1_1_storage}{Storage}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsim_1_1_storage_ad8869770f6a24d6c8add0724139bade6}{Leave}} (\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$simulate, T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em $\ast$obj leaves from storage \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::priority\+\_\+queue$<$ T $\ast$, std\+::vector$<$ T $\ast$ $>$, \mbox{\hyperlink{structsim_1_1_compare}{Compare}}$<$ T $>$ $>$ \mbox{\hyperlink{classsim_1_1_storage_ae70d4767cce0683c8a259c8882906ac1}{queue}}
+\item 
+\mbox{\Hypertarget{classsim_1_1_storage_a52a4a7e11403f0e10f7de261e27c2919}\label{classsim_1_1_storage_a52a4a7e11403f0e10f7de261e27c2919}} 
+int {\bfseries capacity} = 1
+\item 
+\mbox{\Hypertarget{classsim_1_1_storage_a8af35078bcaa18726f29e253ba10e4f7}\label{classsim_1_1_storage_a8af35078bcaa18726f29e253ba10e4f7}} 
+int {\bfseries current\+\_\+capacity} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsim_1_1_storage_ae8cc15470762c10194e27ddfdcb609ee}\label{classsim_1_1_storage_ae8cc15470762c10194e27ddfdcb609ee}} 
+\index{sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}!Enter@{Enter}}
+\index{Enter@{Enter}!sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classsim_1_1_storage}{sim\+::\+Storage}}$<$ T $>$\+::Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$}]{simulate,  }\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+$\ast$obj T enters \mbox{\hyperlink{classsim_1_1_storage}{Storage}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$obj} & T that will enter \mbox{\hyperlink{classsim_1_1_storage}{Storage}} \\
+\hline
+{\em $\ast$simulate} & \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} simulator that simulates an example\\
+\hline
+\end{DoxyParams}
+if the $\ast$obj can be fit in storage, Storage\+::current\+\_\+capacity is incremented bu $\ast$obj\+::vaulue obj\+::time is set to Simulate\+::time+obj\+::length and obj is inserted into simulate\+::events otherwise $\ast$obj is pushed to the queue \mbox{\Hypertarget{classsim_1_1_storage_a9d5c1d3088875c5bdc1bd6303f7116a5}\label{classsim_1_1_storage_a9d5c1d3088875c5bdc1bd6303f7116a5}} 
+\index{sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}!Full@{Full}}
+\index{Full@{Full}!sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Full()}{Full()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classsim_1_1_storage}{sim\+::\+Storage}}$<$ T $>$\+::Full (\begin{DoxyParamCaption}\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Checks if $\ast$obj can fit in storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$obj} & T that will occupy \mbox{\hyperlink{classsim_1_1_storage}{Storage}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if $\ast$obj can not be fit in \mbox{\hyperlink{classsim_1_1_storage}{Storage}} or there is other $\ast$obj in queue, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsim_1_1_storage_ad8869770f6a24d6c8add0724139bade6}\label{classsim_1_1_storage_ad8869770f6a24d6c8add0724139bade6}} 
+\index{sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}!Leave@{Leave}}
+\index{Leave@{Leave}!sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Leave()}{Leave()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classsim_1_1_storage}{sim\+::\+Storage}}$<$ T $>$\+::Leave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsim_1_1_simulator}{sim\+::\+Simulator}} $\ast$}]{simulate,  }\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+$\ast$obj leaves from storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$simulate} & \mbox{\hyperlink{classsim_1_1_simulator}{Simulator}} simulator that simulates an example \\
+\hline
+{\em $\ast$obj} & T that leaves \mbox{\hyperlink{classsim_1_1_storage}{Storage}}\\
+\hline
+\end{DoxyParams}
+Storage\+::current\+\_\+capacity is decremented by $\ast$obj\+::value if the queue is non\+\_\+empty then object from the top of the queue enters if it can fit 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsim_1_1_storage_ae70d4767cce0683c8a259c8882906ac1}\label{classsim_1_1_storage_ae70d4767cce0683c8a259c8882906ac1}} 
+\index{sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}!queue@{queue}}
+\index{queue@{queue}!sim::Storage$<$ T $>$@{sim::Storage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::priority\+\_\+queue$<$T $\ast$, std\+::vector$<$T $\ast$$>$,\mbox{\hyperlink{structsim_1_1_compare}{Compare}}$<$T$>$ $>$ \mbox{\hyperlink{classsim_1_1_storage}{sim\+::\+Storage}}$<$ T $>$\+::queue}
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & std\+::priority\+\_\+queue$<$T $\ast$, std\+::vector$<$\+T $\ast$$>$,Compare$<$\+T$>$$>$ represents priority queue of device based on its priority \\
+\hline
+{\em capacity} & int capacity of device \\
+\hline
+{\em surrent\+\_\+capacity} & int how much capacity is taken \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sim_8h}{sim.\+h}}\end{DoxyCompactItemize}

@@ -1,6 +1,9 @@
-//
-// Created by hater on 6. 12. 2020.
-//
+/*!
+*\file
+* Template file for library
+*
+*\authors Andrej Jezik, Branislav Dubec
+*/
 
 #ifndef SIM_H
 #endif

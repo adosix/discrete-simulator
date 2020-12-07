@@ -1,3 +1,10 @@
+/*!
+*\file
+* Source code of library
+*
+*\authors Andrej Jezik, Branislav Dubec
+*/
+
 #include "sim.h"
 
 #ifndef M_PI

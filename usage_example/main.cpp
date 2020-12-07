@@ -1,3 +1,10 @@
+
+/*!
+*\file
+* main.cpp
+*
+*\authors Andrej Jezik, Branislav Dubec
+*/
 #include <getopt.h>
 #include "disease.cpp"
 #include "death_events.cpp"

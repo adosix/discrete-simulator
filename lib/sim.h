@@ -1,4 +1,9 @@
-
+/*!
+*\file
+*Header file for library
+*
+*\authors Andrej Jezik, Branislav Dubec
+*/
 #ifndef SIM_H
 #define SIM_H
 
