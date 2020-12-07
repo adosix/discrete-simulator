@@ -155,7 +155,7 @@ namespace sim {
         while (events.elements.size() > 0) {
             time = events.elements.front()->time;
             if(end_time <= time){
-                exit(0);
+                return;
             }
             Event *tmp = events.elements.front();
             events.elements.erase(events.elements.begin());

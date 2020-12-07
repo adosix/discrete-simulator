@@ -61,10 +61,13 @@ namespace sim {
     void sim::Storage<T>::Leave(sim::Simulator *simulate, T *obj){
         current_capacity  -= obj->value;
         if (queue.size()>0) {
-            T *obj= queue.top();
-            if(!Full(obj)){
+            T *tmp= queue.top();
+            if(!(capacity < (current_capacity+tmp->value))){
                 queue.pop();
-                this->Enter(simulate, obj);
+                current_capacity += tmp->value;
+
+                tmp->time = ((sim::Simulator*)simulate)->now() + tmp->length;
+                simulate->events.insert(tmp);
             }
         }
 
