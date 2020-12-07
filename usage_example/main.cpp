@@ -3,6 +3,7 @@
 #include "death_events.cpp"
 #include "bank.cpp"
 #include "demo_spalovna.cpp"
+#include "demo_lakovna.cpp"
 #include "../lib/sim.h"
 
 
@@ -102,8 +103,12 @@ int main(int argc, char *argv[]){
         BankSimulator_v sim;
         sim.start();
     }
-    else{
+    else if ((arguments->example).compare("spalovna")==0){
        Spalovna sim;
+        sim.start();
+    }
+    else{
+        Lakovna_sim sim;
         sim.start();
     }
     return 0;

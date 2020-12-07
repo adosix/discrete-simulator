@@ -1,6 +1,7 @@
 #include "sim.h"
 
 namespace sim {
+
     bool Event::lessThan(double y) {
         return time <= y;
     }
@@ -92,11 +93,6 @@ namespace sim {
 
     }
 
-    void ListQueue::printlist() {
-        std::vector<sim::Event *>::iterator it = elements.begin();
-        for (it = elements.begin(); it != elements.end(); ++it)
-            printf("%f %d\n", ((*it)->time), ((*it)->priority));
-    }
 
     double Simulator::now() {
         return time;

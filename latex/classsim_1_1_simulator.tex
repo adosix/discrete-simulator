@@ -1,0 +1,78 @@
+\doxysection{sim\+::Simulator Class Reference}
+\label{classsim_1_1_simulator}\index{sim::Simulator@{sim::Simulator}}
+
+
+Class \doxyref{Simulator}{p.}{classsim_1_1_simulator} that is used to simulate whole experiment.  
+
+
+
+
+{\ttfamily \#include $<$sim.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \textbf{ now} ()
+\begin{DoxyCompactList}\small\item\em returns time of the \doxyref{Simulator}{p.}{classsim_1_1_simulator} \end{DoxyCompactList}\item 
+\mbox{\label{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664}} 
+void \textbf{ do\+All\+Events} ()
+\begin{DoxyCompactList}\small\item\em execute all the events in \doxyref{Simulator}{p.}{classsim_1_1_simulator} Sets time of \doxyref{Simulator}{p.}{classsim_1_1_simulator} to the time of he last executed event. Program ends when the time is greater or equal to the end\+\_\+time. Executes event at the front of \doxyref{List\+Queue\+::elements}{p.}{classsim_1_1_list_queue_a162ffe38bcb636f74992f99727ad59f2} and erase this event from \doxyref{List\+Queue\+::elements}{p.}{classsim_1_1_list_queue_a162ffe38bcb636f74992f99727ad59f2}. \end{DoxyCompactList}\item 
+\mbox{\label{classsim_1_1_simulator_aad1c1433355dfd7a8766c8a24104a17b}} 
+virtual void \textbf{ start} ()
+\begin{DoxyCompactList}\small\item\em start of the Simulation Initialize \doxyref{sim\+::\+List\+Queue}{p.}{classsim_1_1_list_queue} events; sets end\+\_\+time(M\+AX=double\+\_\+max) Insert into events at least one \doxyref{Event}{p.}{classsim_1_1_event} Call \doxyref{do\+All\+Events()}{p.}{classsim_1_1_simulator_a2072b0e999836547c0bbb36ba2d3a664} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ List\+Queue} \textbf{ events}
+\item 
+\mbox{\label{classsim_1_1_simulator_a802d2e3819245a3b3a77b4680fca52d4}} 
+double {\bfseries time} = 0.\+0
+\item 
+\mbox{\label{classsim_1_1_simulator_aeb5b50f438f799e403508a1b91a01af7}} 
+double {\bfseries end\+\_\+time} =0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxyref{Simulator}{p.}{classsim_1_1_simulator} that is used to simulate whole experiment. 
+
+Simulation ends when its time reaches end\+\_\+time or when all the events are finished. Simulation time is time of the last executed event 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classsim_1_1_simulator_a1f073f24299b477df15ab9b29644d82e}} 
+\index{sim::Simulator@{sim::Simulator}!now@{now}}
+\index{now@{now}!sim::Simulator@{sim::Simulator}}
+\doxysubsubsection{now()}
+{\footnotesize\ttfamily double sim\+::\+Simulator\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns time of the \doxyref{Simulator}{p.}{classsim_1_1_simulator} 
+
+\begin{DoxyReturn}{Returns}
+time of the \doxyref{Simulator}{p.}{classsim_1_1_simulator} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classsim_1_1_simulator_a6d33d0e41c4589f22f5735bdfc2b2119}} 
+\index{sim::Simulator@{sim::Simulator}!events@{events}}
+\index{events@{events}!sim::Simulator@{sim::Simulator}}
+\doxysubsubsection{events}
+{\footnotesize\ttfamily \textbf{ List\+Queue} sim\+::\+Simulator\+::events}
+
+
+\begin{DoxyParams}{Parameters}
+{\em events} & \doxyref{List\+Queue}{p.}{classsim_1_1_list_queue} to store events of simulator. \\
+\hline
+{\em time} & double time of the simulation. \\
+\hline
+{\em end\+\_\+time} & double is final time of the simulation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sim.\+h\item 
+sim.\+cpp\end{DoxyCompactItemize}
