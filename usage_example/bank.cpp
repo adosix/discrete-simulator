@@ -57,7 +57,7 @@ public:
 * The customer's service is completed so print a message.
 * If the queue is not empty, get the next customer.
 */
-        void Seize(sim::Simulator *simulate, Customer_v customer) {
+    void Seize(sim::Simulator *simulate, Customer_v customer) {
 
         busy_flag=true;
 

@@ -84,16 +84,30 @@ Arguments* Arguments::parse_arguments(int argc, char **argv){
 int main(int argc, char *argv[]){
      arguments = Arguments::parse_arguments(argc, argv);
     //BankSimulator().start();
+
+    //ascii art demonstrations of our generator with distribution
     if((arguments->distribution).compare("exp")==0){
         sim::Random_g generato;
-        generato.distributions();
+        generato.distributions(1);
+    }
+    else if((arguments->distribution).compare("normal")==0){
+        sim::Random_g generato;
+        generato.distributions(2);
+    }
+    else if((arguments->distribution).compare("uniform")==0){
+        sim::Random_g generato;
+        generato.distributions(3);
+    }
+    else if((arguments->distribution).compare("rand")==0){
+        sim::Random_g generato;
+        generato.distributions(4);
     }
 
-    if((arguments->example).compare("death")==0){
+    else if((arguments->example).compare("death")==0){
         DeathSimulator sim;
         sim.start();
     }
-    if((arguments->example).compare("disease")==0){
+    else if((arguments->example).compare("disease")==0){
         DiseaseSimulator sim;
         sim.start();
     }
