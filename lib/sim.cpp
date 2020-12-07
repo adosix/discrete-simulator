@@ -50,19 +50,71 @@ namespace sim {
         return d(gen);
     }
 
-    int Random_g::distributions(){
-        int s = 100;
-            
+    int Random_g::distributions(int type){
+        const int nrolls=100000;  // number of experiments
+        const int nstars=100;    // maximum number of stars to distribute
+        const int nintervals=10; // number of intervals
+        int p[nintervals]={};
         std::map<int, int> result_set;
         
-        for (int i =0; i < 100000; ++i)
-            ++result_set[exp(8)];
+        if (type==1)
+        {
+            std::cout << "exponential distribution exp(1)" << std::endl;
+            for (int i=0; i<nrolls; ++i) {
+                double n =exp(3.5);
+                if (n<1.0) ++p[int(nintervals*n)];
+            }
 
-        for (auto& v : result_set) {
-            std::cout << std::setprecision (1) << std::fixed;
-            std::cout << v.first/1.f << " - " << (v.first+1)/1.f << " -> ";
-            std::cout << std::string (v.second/100, '.') << std::endl;
+            for (int i=0; i<nintervals; ++i) {
+                printf("%.2f - %.2f: ",float(i)/nintervals,float(i+1)/nintervals);
+                std::cout << std::string(p[i]*nstars/nrolls,'*') << std::endl;
+            }
         }
+        else if (type==2)
+        {
+            std::cout << "normal distribution normal(50,2)" << std::endl;
+             std::map<int, int> hist{};
+            for (int i=0; i<nrolls; ++i) {
+                ++hist[std::round(normal(5,2.5))];
+            }
+            for(auto p : hist) {
+            std::cout << std::setw(2)
+            << p.first << ' ' << std::string(p.second/300, '*') << '\n';
+            }
+            
+        }
+        else if (type==3)
+        {
+            std::cout << "uniform distribution uniform(0,10)" << std::endl;
+            std::map<int, int> hist{};
+            for (int i=0; i<nrolls; ++i) {
+                ++hist[uniform(1,10)];
+            }
+            for(auto p : hist) {
+            std::cout << std::setw(2)
+            << p.first << ' ' << std::string(p.second/300, '*') << '\n';
+            }
+            
+        }
+        else if (type==4)
+        {
+            
+            std::cout << "random distribution rand()" << std::endl;
+            for (int i=0; i<nrolls; ++i) {
+                double n =rand();
+                if (n<1.0) ++p[int(nintervals*n)];
+            }
+
+            for (int i=0.0; i<nintervals; ++i) {
+                printf("%.2f - %.2f: ",float(i)/nintervals,float(i+1)/nintervals);
+                std::cout << std::string(p[i]*nstars/nrolls,'*') << std::endl;
+            }
+        }
+        else
+        {
+            exit(1);
+        }
+
     }
 
     void ListQueue::insert(Event *e) {

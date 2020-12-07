@@ -26,6 +26,30 @@ public:
 class Server_s : virtual public sim::Facility<Customer_v> {
 public:
    sim::Queue_t<Customer_v> queue_v;
+
+/**
+* The customer's service is completed so print a message.
+* If the queue is not empty, get the next customer.
+*/
+    void Seize(sim::Simulator *simulate, Customer_v customer) {
+
+        busy_flag=true;
+
+        sim::Random_g generato;
+        double serviceTime = generato.exp(1.0);
+        customer.time = ((sim::Simulator*)simulate)->now() + serviceTime;
+        simulate->events.insert(&customer);
+    }
+    void Release(sim::Simulator *simulate) {
+
+        busy_flag=false;
+        if (queue.size()>0) {
+
+            Customer_v *customer= queue.remove();
+            simulate->events.insert( customer);
+        }
+
+    }
 };
 
 void Generator_v::execute(sim::Simulator *simulate) {
