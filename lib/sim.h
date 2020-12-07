@@ -108,22 +108,42 @@ namespace sim {
         virtual void start(){};
     };
     /*! \brief Class Random_g generates random values
-     * Can generate exponential normal, uniform distribution and random distribution in rage [0,1]
+     * Can generate exponential, normal, uniform distribution and uniform distribution in rage [0,1]
    *
    */
     class Random_g {
         static const std::mt19937 gen(std::random_device());
 
     public:
+        /*! \brief demonstration of generators
+        * \param *type int defines which distripution is going to be executed
+        *       1 - exponential
+        *       2 - normal
+        *       3 - uniform
+        *       4 - random (uniform  in range (0,1))
+        */
         void distributions(int type);
 
+        /*! \brief generates number which is described by exponential distribution
+        * \param *mean double mean of exponential distribution
+        */
         double exp_m(double mean);
+        /*! \brief generates number which is described by exponential distribution
+        * \param *lambda double of exponential distribution
+        */
         double exp(double lambda);
-
+        /*! \brief generates number which is described by normal/Gaussian distribution
+        * \param *m double mean of normal distribution
+        * \param *q double standard deviation of normal distribution
+        */
         double normal(double m, double q);
-
+        /*! \brief generates number which is described by uniform distribution on interval (a,b)
+        * \param *a double start of interval
+        * \param *b double end of interval
+        */
         double uniform(double a, double b);
-
+        /*! \brief generates number which is described by uniform distribution on interval (0,1)
+        */
         double rand();
 
     };
