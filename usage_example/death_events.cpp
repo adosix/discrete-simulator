@@ -12,15 +12,14 @@ public:
     virtual void execute(sim::Simulator *simulate) {
         sim::Random_g generator;
 
-        printf("Time when angel finished his last job: %f  \n", generator.normal(5,10));
-        printf("person died at %1.f AM , human had priority %d for angel\n", time,priority);
+        printf("%4.f Time when angel finished his last job.  \n", generator.normal(5,10));
+        printf("%4.f Time when person died, human soul has priority %d for angel\n", time,priority);
     }
 };
 
 class DeathSimulator : public sim::Simulator {
     public: void start() {
         sim::ListQueue events_q;
-        int NumberOfObjects = 5;
 
         sim::Event *event_ptr = new Death(1,2);
         events_q.insert(event_ptr);

@@ -58,7 +58,7 @@ void makeContact(sim::Simulator *simulate) {
     Person *person = &population.at(
             static_cast<int>(population.size()*generato.rand()));
     if (person->state != SUSCEPTIBLE) return;
-    person->recoveryTime = simulate->now() + generato.exp(meanInfectiousDuration);
+    person->recoveryTime = simulate->now() + generato.exp_m(meanInfectiousDuration);
     person->scheduleNextEvent(simulate);
 }
 /**
@@ -67,7 +67,7 @@ void makeContact(sim::Simulator *simulate) {
 */
 void scheduleNextEvent(sim::Simulator *simulate) {
     sim::Random_g generato;
-    double nextContactTime = simulate->now() + generato.exp(meanInterContactInterval);
+    double nextContactTime = simulate->now() + generato.exp_m(meanInterContactInterval);
     if (nextContactTime < recoveryTime) {
         nextState = INFECTIOUS;
         time = nextContactTime;
@@ -95,7 +95,7 @@ void start() {
     }
     for (int i = 0; i< 5; i++) {
         person = new Person(1);
-        person->recoveryTime = gen.exp(person->meanInfectiousDuration);
+        person->recoveryTime = gen.exp_m(person->meanInfectiousDuration);
         person->scheduleNextEvent(this);
     }
 

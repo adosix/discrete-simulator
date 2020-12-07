@@ -15,7 +15,7 @@ public:
 class Generator : virtual public sim::Event{
 public:
     sim::Random_g generator;
-    double length=30+generator.exp(1);
+    double length=30+generator.exp_m(1);
     virtual void execute(sim::Simulator *simulate) ;
 };
 class Montovna : virtual public sim::Facility<Poziadavka> {
@@ -35,8 +35,8 @@ void Generator::execute(sim::Simulator *simulate) {
     poziadavka->length = generator.uniform(30,40);
     printf("cas montovania %f\n", poziadavka->length);
     montovna->Seize(simulate,poziadavka);
-    printf("montovna rada %d\n", montovna->queue_f.size());
-    time =  ((sim::Simulator*)simulate)->now() +30+generator.exp(1);
+    printf("montovna rada %ld\n", montovna->queue_f.size());
+    time =  ((sim::Simulator*)simulate)->now() +30+generator.exp_m(1);
     simulate->events.insert(this);
 }
 void Poziadavka::execute(sim::Simulator *simulate) {
@@ -56,7 +56,7 @@ void Poziadavka::execute(sim::Simulator *simulate) {
             printf("ZATVARAME\n");
             montovna->closed=true;
         }
-        printf("lakovacia rada %d\n", lakovna->queue_f.size());
+        printf("lakovacia rada %ld\n", lakovna->queue_f.size());
     }
     else if(this->state == namontovana){
         printf("produkt nalakovany\n");

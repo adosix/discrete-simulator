@@ -115,8 +115,10 @@ namespace sim {
         static const std::mt19937 gen(std::random_device());
 
     public:
-        int distributions(int type);
-        double exp(double m);
+        void distributions(int type);
+
+        double exp_m(double mean);
+        double exp(double lambda);
 
         double normal(double m, double q);
 

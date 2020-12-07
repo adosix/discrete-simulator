@@ -18,17 +18,7 @@ namespace sim {
         return priority >= x;
     }
 
-
-    double Random_g::exp(double m){
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        //parameter is lambda
-        std::exponential_distribution<> d(m);
-
-        return d(gen);
-    }
-
-    double exp(double lambda){
+    double Random_g::exp(double lambda){
         double u;
         std::random_device rd;
         std::mt19937 gen(rd());
@@ -36,8 +26,8 @@ namespace sim {
         return -log(1- u) / lambda;
     }
 
-    double exp_m(double mean){
-        exp(1/mean);
+    double Random_g::exp_m(double mean){
+        return exp(1/mean);
     }
 
     double Random_g::normal(double m, double q){
@@ -59,7 +49,7 @@ namespace sim {
         return d(gen);
     }
 
-    int Random_g::distributions(int type){
+    void Random_g::distributions(int type){
         const int nrolls=10000;  // number of experiments
         const int nstars=100;    // maximum number of stars to distribute
         const int nintervals=10; // number of intervals
@@ -86,7 +76,6 @@ namespace sim {
             std::map<int, int> hist{};
             for (int i=0; i<nrolls; ++i) {
                 float n = normal(10,2.5);
-                printf("%.2f, ", n);
                 ++hist[n];
             }
             for(auto p : hist) {

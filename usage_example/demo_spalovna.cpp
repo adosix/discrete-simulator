@@ -7,7 +7,7 @@ public:
 
 
     sim::Random_g generator;
-    double length=2+generator.exp(1);
+    double length=2+generator.exp_m(1);
     double value=1;
     int priority = 0;
     virtual void execute(sim::Simulator *simulate) ;
@@ -45,7 +45,7 @@ void Car::execute(sim::Simulator *simulate) {
         printf("zhori %f, trvanie horenia %f\n",package->time, package->length );
         printf("nove auto %d,%f\n",this->id,time );
         printf("storage capacita %d\n",comb_chamber->current_capacity );
-        printf("queue kapacita %d\n",comb_chamber->queue.size() );
+        printf("queue kapacita %ld\n",comb_chamber->queue.size() );
         simulate->events.insert(this);
     }
 

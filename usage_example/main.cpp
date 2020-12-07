@@ -3,7 +3,7 @@
 #include "death_events.cpp"
 #include "bank.cpp"
 #include "demo_spalovna.cpp"
-#include "demo_lakovna.cpp"
+#include "demo_vyrobna_hala.cpp"
 #include "../lib/sim.h"
 
 
@@ -47,7 +47,6 @@ class Arguments
 Arguments* Arguments::parse_arguments(int argc, char **argv){
     Arguments *arguments = new Arguments();
 
-    bool wasServer = false;
     char option;
 
     const struct option longopts[] =
